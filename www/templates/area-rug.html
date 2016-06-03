@@ -1,0 +1,59 @@
+<ion-view view-title="Area Rug">
+<ion-content padding="true">
+<h1>Area Rug</h1>
+
+<p>Wool, oriental and other fine rugs may require additional charges. Minimums may apply. View Terms & Conditions</p>
+<ion-toggle ng-model="airplaneMode" toggle-class="toggle-calm">No guaranteed adjacent</ion-toggle>
+<div class="list card">
+	<div class="item item-divider">
+		<p>Total: {{ total(selectedRoomCleaning, selectedRoomProtect, selectedRoomDeodorize ) }}</p>
+	</div>
+	
+	<label class="item item-input">
+	  <span class="input-label">length</span>
+	  <input type="number">
+	</label>
+	<label class="item item-input">
+	  <span class="input-label">width</span>
+	  <input type="number">
+	</label>
+
+	<div class="item item-divider">
+
+	</div>
+
+	<label class = "item item-input item-select">
+		<div class = "input-label">
+			clean
+		</div>
+		
+		<select ng-model = "selectedRoomCleaning" ng-options="selectedRoomCleaning.price as selectedRoomCleaning.room for selectedRoomCleaning in cleaning">
+		</select>
+		
+		<p>Price: {{ selectedRoomCleaning }}</p>	
+
+	</label>
+	<label class = "item item-input item-select">
+		<div class = "input-label">
+			protect
+		</div>
+		
+		<select ng-model = "selectedRoomProtect" ng-options="selectedRoomProtect.price as selectedRoomProtect.room for selectedRoomProtect in protect">
+		</select>
+
+		<p>Price: {{ selectedRoomProtect }}</p>	
+
+	</label>
+	<label class = "item item-input item-select">
+		<div class = "input-label">
+			deodorize
+		</div>
+		
+		<select ng-model = "selectedRoomDeodorize" ng-options="selectedRoomDeodorize.price as selectedRoomDeodorize.room for selectedRoomDeodorize in deodorize">
+		</select>
+
+		<p>Price: {{ selectedRoomDeodorize }}</p>	
+	</label>
+</div>
+</ion-content>
+</ion-view>
