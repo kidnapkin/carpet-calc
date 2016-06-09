@@ -4,7 +4,7 @@
 <ion-toggle ng-model="airplaneMode" toggle-class="toggle-calm">No guaranteed adjacent</ion-toggle>
 
 <!-- Rooms -->
-<div class="list card">
+<!-- <div class="list card">
 	<div class="item item-divider">
 		Rooms <p>Total: {{ total(selectedRoomCleaning, selectedRoomProtect, selectedRoomDeodorize ) }}</p>
 	</div>
@@ -41,10 +41,10 @@
 
 		<p>Price: {{ selectedRoomDeodorize }}</p>	
 	</label>
-</div>
+</div> -->
 
 <!-- bath/laundry -->
-<div class="list card">
+<!-- <div class="list card">
 	<div class="item item-divider">
 		Bath/laundry <p>Total: {{ total(selectedRoomCleaning, selectedRoomProtect, selectedRoomDeodorize ) }}</p>
 	</div>
@@ -81,10 +81,10 @@
 
 		<p>Price: {{ selectedRoomDeodorize }}</p>	
 	</label>
-</div>
+</div> -->
 
 <!-- entry/hall -->
-<div class="list card">
+<!-- <div class="list card">
 	<div class="item item-divider">
 		Entry / Hall <p>Total: {{ total(selectedRoomCleaning, selectedRoomProtect, selectedRoomDeodorize ) }}</p>
 	</div>
@@ -122,9 +122,9 @@
 		<p>Price: {{ selectedRoomDeodorize }}</p>	
 	</label>
 </div>
-
+ -->
 <!-- staircase -->
-<div class="list card">
+<!-- <div class="list card">
 	<div class="item item-divider">
 		Staircase <p>Total: {{ total(selectedRoomCleaning, selectedRoomProtect, selectedRoomDeodorize ) }}</p>
 	</div>
@@ -161,8 +161,59 @@
 
 		<p>Price: {{ selectedRoomDeodorize }}</p>	
 	</label>
-</div>
+</div> -->
 
+<!-- <div>{{ extRoom }}</div>
+<br>
+<br>
+<br>
+<h2>Parssing</h2> -->
+
+<div ng-repeat="(key, value) in extRoom">{{ key }}{{ key.room(s) }}</div>
+
+
+
+
+
+<!-- DEBUG -->
+<div class="list card">
+	<div class="item item-divider">
+		JSON <p>Total: {{ total(selectedRoomCleaning, selectedRoomProtect, selectedRoomDeodorize ) }}</p>
+	</div>
+	
+	<label class = "item item-input item-select">
+		<div class = "input-label">
+			clean
+		</div>
+		
+		<select ng-model = "selectedRoomCleaning" ng-options="selectedRoomCleaning.price as selectedRoomCleaning.room for selectedRoomCleaning in cleaning">
+		</select>
+		
+		<p>Price: {{ selectedRoomCleaning }}</p>	
+
+	</label>
+	<label class = "item item-input item-select">
+		<div class = "input-label">
+			protect
+		</div>
+		
+		<select ng-model = "selectedRoomProtect" ng-options="selectedRoomProtect.price as selectedRoomProtect.room for selectedRoomProtect in protect">
+		</select>
+
+		<p>Price: {{ selectedRoomProtect }}</p>	
+
+	</label>
+	<label class = "item item-input item-select">
+		<div class = "input-label">
+			deodorize
+		</div>
+		
+		<select ng-model = "selectedRoomDeodorize" ng-options="selectedRoomDeodorize.price as selectedRoomDeodorize.room for selectedRoomDeodorize in deodorize">
+		</select>
+
+		<p>Price: {{ selectedRoomDeodorize }}</p>	
+	</label>
+</div>
 
 </ion-content>
 </ion-view>
